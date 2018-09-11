@@ -15,17 +15,18 @@ my_commute
 ## Assign the text "My commute time, in minutes:" to a variable: 
 ## 1. Try assigning it to `_x` or `1x`. Does it work?
 ## 2. Assign it to `preamble`.
-
+preamble = "My commute time, in minutes:"
 
 ## What data types do `my_commute` and `preamble` contain? Use `typeof`.
+typeof(my_commute)
+typeof(preamble)
 
-
-## Let's use the `print` function to print out the preamble followed by
+## Let's use the `paste` function to paste out the preamble followed by
 ##  the commute time:
+paste(preamble, my_commute)
 
-
-## Bring up the documentation for the `print` function.
-
+## Bring up the documentation for the `paste` function.
+?paste
 
 ## You realize that your commute took you one minute longer than you originally
 ##  thought. 
@@ -36,32 +37,38 @@ my_commute
 ## Let's make a vector of commute times, stored in the variable `commute`.
 ## 1. Start with your commute time, using the `c` function. No magic numbers!
 ## 2. Using commas, add at least 2 more times from those around you.
-
+commute = c(my_commute, 57, 45, 14, 36, 34, 12, 32, 63)
 
 ## Use the `length` function to store the number of observations in `n`.
-
+n = length(commute)
 
 ## Get the mean commute time via the `sum` function and `n`. Store in `mu`.
-
+mu = sum(commute) / n
 
 ## Get the differences between commute times and `mu`. Behold vectorization!
 ##  No need for loops! Store in the variable `diffs`.
-
+diffs = commute - mu
 
 ## Finish computing variance: add up the square of `diffs`, divide by `n-1`.
 ##  Store in the variable `variance`.
-
+variance = sum(diffs^2) / (n-1)
 
 ## Check visually that `var(commute)` gives us the same result.
-
+variance
+var(commute)
 
 ## Check computationally whether they are the same. You get a new object --
 ##  what type of object is it?
-
+variance == var(commute)
+typeof(variance == var(commute))
 
 ## Use an `if` statement to check whether the variance is greater than 10.
 ##  If so, print out "yes", if not, print out "no". 
-
+if (variance > 10){
+  print("yes")
+} else {
+ print ("no")   
+}
 
 ## EXPLORATION:
 ## 1. What objects did we create this session? Check out the "Workspace" under
