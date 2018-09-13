@@ -1,7 +1,7 @@
 ---
 title: "Data Frame Exploration"
 output: 
-    html_document:
+    github_document:
         theme: cerulean
         toc: true
         keep_md: true
