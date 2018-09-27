@@ -104,7 +104,7 @@ Note that ggplot2's grouping is different from dplyr's! Try making a spaghetti p
 ```{r}
 gapminder %>%
   group_by(country) %>%
-  ggplot(aes(year, lifeExp)) +
+  ggplot(aes(year, lifeExp))
   
 ```
 
